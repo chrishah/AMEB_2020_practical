@@ -28,5 +28,5 @@ useGrid=0 -genomeSize=100M \
 ```bash
 singularity run -B $(pwd) docker://chrishah/pyscaf-docker \
 pyScaf.py \
--t 6 -f genome.illumina.fasta -n reads.fastq.gz -o Illumina.MinION.pyscaf
+-t 6 -f genome.illumina.fasta -n reads.fastq.gz -o Illumina.MinION.pyscaf.fasta
 ```
