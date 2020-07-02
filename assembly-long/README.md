@@ -23,7 +23,7 @@ echo -e "\nexport PATH=\$PATH:$(pwd)" >> ~/.bash_profile
 ```bash
 canu -d Dcoe -p Dcoe \
 useGrid=0 -genomeSize=100M \
--nanopore-raw /usr/people/EDVZ/hahnc/AMEB_data/MinION/Dcoel_minion/*.fastq.gz
+-nanopore-raw ./MinION-data/*.fastq.gz
 ```
 
 ## pyScaf
