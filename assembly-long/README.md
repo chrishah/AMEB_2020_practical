@@ -4,6 +4,10 @@
 
 ### Installation
 ```bash
+cd ~
+cd src
+mkdir CANU
+cd CANU
 wget https://github.com/marbl/canu/archive/end-of-big-meryl.tar.gz
 tar xfvz end-of-big-meryl.tar.gz
 cd canu-end-of-big-meryl/
