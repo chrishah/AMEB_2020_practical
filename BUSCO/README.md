@@ -20,7 +20,7 @@ For the course all BUSCO results are deposited in a directory that you should al
 So the command should look like this:
 
 ```bash
-../scripts/evaluate.py \
+(user@host)-$ ../scripts/evaluate.py \
 -i ingroup.txt -o outgroup.txt \
 --max_mis_in 3 --max_mis_out 1 --max_avg 2 --max_med 1 \
 --outfile summary.tsv \
@@ -40,8 +40,7 @@ tail -n 50 > my_subset.txt
 
 We can now run the pipeline that we've already demonstrated in a previous [session](https://github.com/chrishah/AMEB_HPC_Snakemake).
 
-Prepare a submission script.
-
+Prepare a submission script, containing the following snakemake call. An example is [here](https://github.com/chrishah/AMEB_2020_practical/blob/master/BUSCO/submit_snakemake.sge.sh).
 
 ```bash
 snakemake \
@@ -52,3 +51,15 @@ dir=/usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/ \
 ingroup="$(pwd)/ingroup.txt" outgroup="$(pwd)/outgroup.txt" \
 files="$(cat my_subset.txt | tr '\n' ' ' | sed 's/ $//')"
 ```
+
+Now, before you submit you need to enter your conda snakemake environment.
+```bash
+conda activate snakemake
+```
+
+Now you can submit.
+```bash
+(snakemake) (user@host)-$ qsub submit_snakemake.sge.sh
+```
+
+
