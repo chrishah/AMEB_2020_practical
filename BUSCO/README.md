@@ -40,11 +40,16 @@ tail -n 50 > my_subset.txt
 
 We can now run the pipeline that we've already demonstrated in a previous [session](https://github.com/chrishah/AMEB_HPC_Snakemake).
 
+
+```bash
+(user@host)-$ cat summary.tsv | \
+
+
 Prepare a submission script, containing the following snakemake call. An example is [here](https://github.com/chrishah/AMEB_2020_practical/blob/master/BUSCO/submit_snakemake.sge.sh).
 
 ```bash
 snakemake \
---use-singularity --singularity-args "-B $(pwd) -B /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/" \
+--use-singularity --singularity-args "-B $(pwd)/../ -B /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/" \
 -j 6 -p \
 --config \
 dir=/usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/ \
