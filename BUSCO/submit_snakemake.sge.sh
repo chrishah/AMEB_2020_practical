@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#$ -N snakemake	   	# Job name
+#$ -N sn-CH	   	# Job name
 #$ -S /bin/bash         # Set shell to bash
 #
 #$ -l h_vmem=4G         # Request Max. Virt. Mem. (this is per core, see -pe option below)
@@ -23,7 +23,7 @@ echo "Job: $JOB_ID"
 echo -e "\n[$(date)] .. Starting ..\n"
 
 snakemake \
---use-singularity --singularity-args "-B $(pwd) -B /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/" \
+--use-singularity --singularity-args "-B $(pwd)/../ -B /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/" \
 -j 6 -p \
 --config \
 dir=/usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/ \
