@@ -1,0 +1,191 @@
+rule all:
+    input:
+        expand("per_gene/{BUSCO}/{BUSCO}.raxml.done", BUSCO=config["files"].split(" ")),
+	"post-filtering-concat/FcC_supermatrix.fas",
+	"phylogenomic-ML/RAxML_bipartitions.final"
+        
+rule get_seqs:
+    input:
+        ingroup = config["ingroup"],
+        outgroup = config["outgroup"]
+    params:
+        script = "../scripts/fetch_seqs.sh",
+        prefix = "{BUSCO}",
+        dir = config["dir"]
+    singularity:
+        "docker://chrishah/ncbi-blast:v2.6.0"
+    threads: 2
+    log:
+        stdout = "per_gene/{BUSCO}/get_seqs.stdout.txt",
+        stderr = "per_gene/{BUSCO}/get_seqs.stderr.txt"
+    output:
+        "per_gene/{BUSCO}/{BUSCO}.fasta"
+    shell:
+        """
+	basedir=$(pwd)
+        cd per_gene/{params.prefix}
+        
+        bash $basedir/{params.script} {params.prefix} {params.dir} {input.ingroup} {input.outgroup} 1> ../../{log.stdout} 2> ../../{log.stderr}
+
+        """
+        
+rule MSA:
+    input:
+        "per_gene/{BUSCO}/{BUSCO}.fasta"
+    output:
+        "per_gene/{BUSCO}/{BUSCO}.clustalo.fasta"
+    singularity:
+        "docker://chrishah/clustalo-docker:1.2.4"
+    threads: 2
+    log:
+        stdout = "per_gene/{BUSCO}/MSA.stdout.txt",
+        stderr = "per_gene/{BUSCO}/MSA.stderr.txt"
+    shell:
+        """
+        clustalo -i {input} -o {output} --threads={threads} 1> {log.stdout} 2> {log.stderr}
+        """
+        
+rule score_and_cut:
+    input:
+        "per_gene/{BUSCO}/{BUSCO}.clustalo.fasta"
+    params:
+        prefix = "{BUSCO}"
+    output:
+        "per_gene/{BUSCO}/ALICUT_{BUSCO}.clustalo.fasta"
+    threads: 2
+    singularity:
+        "docker://chrishah/alicut-aliscore-docker:2.31"
+    shell:
+        """
+        cd per_gene/{params.prefix}
+        Aliscore.pl -N -r 200000000000000000 -i ../../{input} &> aliscore.log
+        ALICUT.pl -s &> alicut.log
+        """
+        
+rule find_best_model:
+    input:
+        "per_gene/{BUSCO}/ALICUT_{BUSCO}.clustalo.fasta"
+    params:
+        prefix = "{BUSCO}"
+    output:
+        "per_gene/{BUSCO}/{BUSCO}.best_model"
+    threads: 2
+    singularity:
+        "docker://chrishah/raxml-docker:8.2.12"
+    log:
+        stderr = "per_gene/{BUSCO}/find_best_model.stderr.txt"
+    shell:
+        """
+        cd per_gene/{params.prefix}
+        if [ ! -d find_best_model ]
+        then
+            mkdir find_best_model
+        fi
+        cd find_best_model
+        ln -s ../../../{input} {params.prefix}.fasta
+        ProteinModelSelection.pl {params.prefix}.fasta 1> ../../../{output} 2> ../../../{log.stderr}
+        """
+        
+rule infer_single_ML:
+    input:
+        "per_gene/{BUSCO}/{BUSCO}.best_model",
+        "per_gene/{BUSCO}/ALICUT_{BUSCO}.clustalo.fasta"
+    params:
+        prefix = "{BUSCO}",
+        bs = 100,
+	mincount = "5"
+    output:
+        "per_gene/{BUSCO}/{BUSCO}.raxml.done"
+    threads: 2
+    singularity:
+        "docker://chrishah/raxml-docker:8.2.12"
+    log:
+        stdout = "per_gene/{BUSCO}/infer_single_ML.stdout.txt",
+        stderr = "per_gene/{BUSCO}/infer_single_ML.stderr.txt"
+    shell:
+        """
+        cd per_gene/{params.prefix}
+	count=$(cat ../../{input[1]} | grep ">" | wc -l)
+	if [ "$count" -gt {params.mincount} ]
+        then
+		RAxMLmodel=$(cat ../../{input[0]} | grep "Best" | cut -d ":" -f 2 | tr -d '[:space:]')
+        
+        	raxml -f a -T {threads} -m PROTGAMMA$RAxMLmodel \
+        	-p 12345 -x 12345 -# {params.bs} \
+        	-s ../../{input[1]} -n {params.prefix}.clustalo.aln.ALICUT.$RAxMLmodel \
+		1> ../../{log.stdout} 2> ../../{log.stderr}
+	else
+		echo "fasta file {input[1]} contains fewer than {params.mincount} sequences - skipped" > ../../{log.stdout}
+	fi
+        touch ../../{output}
+        """
+
+rule post_filter:
+    input:
+        expand("per_gene/{BUSCO}/{BUSCO}.raxml.done", BUSCO=config["files"].split(" "))
+    params:
+        script = "../scripts/post-filter.sh",
+	minlen = "200",
+	mincount = "5"
+    singularity:
+        "docker://chrishah/ncbi-blast:v2.6.0"
+    output:
+        "post-filtering-concat/post_filter.ok"
+    log:
+        stdout = "post-filtering-concat/post_filter.stdout.txt",
+        stderr = "post-filtering-concat/post_filter.stderr.txt"
+    shell:
+        """
+	basedir=$(pwd)
+        cd post-filtering-concat
+        
+        bash $basedir/{params.script} ../per_gene/ {params.minlen} {params.mincount} 1> ../{log.stdout} 2> ../{log.stderr}
+
+	touch ../{output}
+        """
+
+rule concat:
+    input:
+        rules.post_filter.output
+    singularity:
+        "docker://chrishah/fasconcat-g:1.04"
+    output:
+        "post-filtering-concat/FcC_supermatrix.fas"
+    log:
+        stdout = "post-filtering-concat/concat.stdout.txt",
+	stderr = "post-filtering-concat/concat.stderr.txt"
+    shell:
+        """
+	cd post-filtering-concat
+
+	FASconCAT-G.pl -a -a -s 1> ../{log.stdout} 2> ../{log.stderr}
+	"""
+
+rule infer_supermatrix_ML:
+    input:
+        fasta = rules.concat.output
+    params:
+        script = "../scripts/create_partitions.sh"
+    singularity:
+        "docker://chrishah/raxml-docker:8.2.12"
+    threads: 6
+    log:
+        stdout = "phylogenomic-ML/infer_supermatrix_ML.stdout.txt",
+        stderr = "phylogenomic-ML/infer_supermatrix_ML.stderr.txt"
+    output:
+        partitions = "phylogenomic-ML/partitions.txt",
+        tree = "phylogenomic-ML/RAxML_bipartitions.final"
+    shell:
+        """
+	basedir=$(pwd)
+	cd phylogenomic-ML
+
+	bash $basedir/{params.script} ../post-filtering-concat 1> ../{output.partitions} 2> partitions.err
+
+	file=(RAxML*)
+	if [ -f "$file" ]
+	then
+		rm RAxML*
+	fi
+	raxml -f a -T {threads} -m PROTGAMMAWAG -p 12345 -q ../{output.partitions} -x 12345 -# 100 -s ../{input.fasta} -n final 1> ../{log.stdout} 2> ../{log.stderr}
+        """

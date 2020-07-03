@@ -1,0 +1,11 @@
+Clonorchis_sinensis
+Diclidophora_denticulata
+Dictyocotyle_coeliaca
+Echinococcus_granulosus
+Gyrodactylus_salaris
+Hymenolepis_microstoma
+Kapentagyrus_tanganicanus
+Opisthorchis_viverrini
+Protopolystoma_xenopodis
+Schistosoma_mansoni
+Taenia_solium
