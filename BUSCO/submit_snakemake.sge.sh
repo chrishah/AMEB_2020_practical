@@ -24,6 +24,7 @@ echo -e "\n[$(date)] .. Starting ..\n"
 
 snakemake \
 --use-singularity --singularity-args "-B $(pwd)/../ -B /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/" \
+--latency-wait 50 \
 -j 6 -p \
 --config \
 dir=/usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/ \
