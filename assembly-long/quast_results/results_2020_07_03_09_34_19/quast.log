@@ -1,0 +1,96 @@
+/opt/conda/lib/python2.7/site-packages/quast-5.0.2-py2.7.egg-info/scripts/quast.py Dcoe_minia_k71.contigs.fa Dcoe_PLATANUS.scaffolds.fasta Dcoe_SPADES.scaffolds.fasta ./minia/Illumina.MinION.pyscaf.fasta ./platanus/Illumina.MinION.pyscaf.fasta SPADES.MinION.pyscaf.fasta Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-3.10.0-1062.9.1.el7.x86_64-x86_64-with-debian-10.0 (linux_64)
+  Python version: 2.7.16
+  CPUs number: 32
+
+Started: 2020-07-03 09:34:20
+
+Logging to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/quast.log
+NOTICE: Maximum number of threads is set to 8 (use --threads option to set it manually)
+
+CWD: /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds
+Main parameters: 
+  MODE: default, threads: 8, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  1  Dcoe_minia_k71.contigs.fa ==> Dcoe_minia_k71.contigs
+  2  Dcoe_PLATANUS.scaffolds.fasta ==> Dcoe_PLATANUS.scaffolds
+  3  Dcoe_SPADES.scaffolds.fasta ==> Dcoe_SPADES.scaffolds
+  4  ./minia/Illumina.MinION.pyscaf.fasta ==> minia_Illumina.MinION.pyscaf
+  5  ./platanus/Illumina.MinION.pyscaf.fasta ==> platanus_Illumina.MinION.pyscaf
+  6  SPADES.MinION.pyscaf.fasta ==> SPADES.MinION.pyscaf
+  7  Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold.fasta ==> Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold
+
+2020-07-03 09:34:59
+Running Basic statistics processor...
+  Contig files: 
+    1  Dcoe_minia_k71.contigs
+    2  Dcoe_PLATANUS.scaffolds
+    3  Dcoe_SPADES.scaffolds
+    4  minia_Illumina.MinION.pyscaf
+    5  platanus_Illumina.MinION.pyscaf
+    6  SPADES.MinION.pyscaf
+    7  Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold
+  Calculating N50 and L50...
+    1  Dcoe_minia_k71.contigs, N50 = 3209, L50 = 13463, Total length = 140906045, GC % = 31.27, # N's per 100 kbp =  0.00
+    2  Dcoe_PLATANUS.scaffolds, N50 = 17223, L50 = 2590, Total length = 147422404, GC % = 31.27, # N's per 100 kbp =  107.90
+    3  Dcoe_SPADES.scaffolds, N50 = 8308, L50 = 6262, Total length = 210417237, GC % = 34.44, # N's per 100 kbp =  133.42
+    4  minia_Illumina.MinION.pyscaf, N50 = 7063, L50 = 5341, Total length = 139786868, GC % = 31.47, # N's per 100 kbp =  2646.09
+    5  platanus_Illumina.MinION.pyscaf, N50 = 24367, L50 = 1326, Total length = 131911083, GC % = 31.58, # N's per 100 kbp =  2878.54
+    6  SPADES.MinION.pyscaf, N50 = 10439, L50 = 3603, Total length = 192716943, GC % = 34.80, # N's per 100 kbp =  1885.24
+    7  Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold, N50 = 26015, L50 = 1260, Total length = 127040761, GC % = 31.25, # N's per 100 kbp =  1251.30
+  Drawing Nx plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/GC_content_plot.pdf
+  Drawing Dcoe_minia_k71.contigs GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Dcoe_minia_k71.contigs_GC_content_plot.pdf
+  Drawing Dcoe_PLATANUS.scaffolds GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Dcoe_PLATANUS.scaffolds_GC_content_plot.pdf
+  Drawing Dcoe_SPADES.scaffolds GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Dcoe_SPADES.scaffolds_GC_content_plot.pdf
+  Drawing minia_Illumina.MinION.pyscaf GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/minia_Illumina.MinION.pyscaf_GC_content_plot.pdf
+  Drawing platanus_Illumina.MinION.pyscaf GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/platanus_Illumina.MinION.pyscaf_GC_content_plot.pdf
+  Drawing SPADES.MinION.pyscaf GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/SPADES.MinION.pyscaf_GC_content_plot.pdf
+  Drawing Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold GC content plot...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Dcoe.PLATANUS.MinIONmin1000.pyscf.scaffold_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/coverage_histogram.pdf
+  Drawing Dcoe_SPADES.scaffolds coverage histogram (bin size: 1x)...
+    saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/basic_stats/Dcoe_SPADES-scaffolds_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2020-07-03 09:36:10
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-07-03 09:36:28
+RESULTS:
+  Text versions of total report are saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/report.html
+  PDF version (tables and plots) is saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/report.pdf
+  Icarus (contig browser) is saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/icarus.html
+  Log is saved to /usr/people/BZEDVZ/16oberre/AMEB_Homework/scaffolds/quast_results/results_2020_07_03_09_34_19/quast.log
+
+Finished: 2020-07-03 09:36:29
+Elapsed time: 0:02:08.877233
+NOTICEs: 2; WARNINGs: 1; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
