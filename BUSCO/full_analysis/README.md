@@ -2,19 +2,24 @@
 
 ## Intro
 
-The below steps walk you through the full analyses. I have run it and have deposited the results on Sauron under `/usr/people/EDVZ/hahnc/temp/AMEB_2020_practical/BUSCO/full_analysis.tgz`. I don't want to put it on Github since some of these data are not yet published. If you want, you can of course run it also yourself, but the results should be exactly the same. With the configuration I chose the whole analysis took about 8 hours.
+rhe below steps walk you through the full analyses. I have run it and have deposited the results on Sauron under `/usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/full_analysis.tgz`. I don't want to put it on Github since some of these data are not yet published. 
+
+If you want, you can of course run it also yourself, but the results should be exactly the same. With the configuration I chose the whole analysis took about 8 hours.
 
 If you want to access the results, you can copy them to your Sauron user space like so:
 ```bash
-(user@host)-$ cp /usr/people/EDVZ/hahnc/temp/AMEB_2020_practical/BUSCO/full_analysis.tgz .
+(user@host)-$ cp /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/full_analysis.tgz .
 ``` 
 Then decompress the directory:
 ```bash
 (user@host) tar xvfz full_analysis.tgz
 ```
 
+This contains all files, including logs. Enjoy!
+
 
 ## Analyses walkthrough
+
 The following assumes that you have run BUSCO on all the genomes you want to include in the analyses and that you have present in the current directory a directory each for the genomes which contain the BUSCO results.
 
 If further assumes that you have cloned this repository and that the path to the `scripts` directory is: `~/AMEB_2020_practical/scripts/`. If this is not the case you need to change the path below.
