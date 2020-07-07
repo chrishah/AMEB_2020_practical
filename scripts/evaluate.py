@@ -116,6 +116,9 @@ for B in data.keys():
     for group in ['ingroup','outgroup']:
         for s in data[B][group]:
             paracounts.append(data[B][group][s])
+
+    if not paracounts:
+        paracounts.append(0)
     if len(paracounts) % 2:
         med = sorted(paracounts)[int(len(paracounts)/2)]
     else:
