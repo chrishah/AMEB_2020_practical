@@ -1,6 +1,5 @@
 #species	group	description	web/local	URL/location
 Schmidtea mediterranea	'Turbellaria'	https://www.ncbi.nlm.nih.gov/assembly/GCA_002600895.1	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/600/895/GCA_002600895.1_ASM260089v1/GCA_002600895.1_ASM260089v1_genomic.fna.gz
-Macrostomum lignano	'Turbellaria'	https://www.ncbi.nlm.nih.gov/assembly/GCA_002269645.1	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/269/645/GCA_002269645.1_Mlig_3_7/GCA_002269645.1_Mlig_3_7_genomic.fna.gz
 Taenia solium	Cestoda	https://www.ncbi.nlm.nih.gov/assembly/GCA_001870725.1	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/001/870/725/GCA_001870725.1_MEX_genome_complete.1-6-13/GCA_001870725.1_MEX_genome_complete.1-6-13_genomic.fna.gz
 Echinococcus granulosus	Cestoda	https://www.ncbi.nlm.nih.gov/assembly/GCF_000524195.1	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/524/195/GCF_000524195.1_ASM52419v1/GCF_000524195.1_ASM52419v1_genomic.fna.gz
 Hymenolepis microstoma	Cestoda	https://www.ncbi.nlm.nih.gov/assembly/GCA_000469805.3	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/469/805/GCA_000469805.3_HMN_v3/GCA_000469805.3_HMN_v3_genomic.fna.gz
@@ -10,4 +9,7 @@ Opisthorchis viverrini	Trematoda	https://www.ncbi.nlm.nih.gov/assembly/GCF_00071
 Protopolystoma xenopodi	Polyopisthocotylea	https://www.ncbi.nlm.nih.gov/assembly/GCA_900617795.1/	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/900/617/795/GCA_900617795.1_P_xenopodis_South_Africa_001_upd/GCA_900617795.1_P_xenopodis_South_Africa_001_upd_genomic.fna.gz
 Gyrodactylus salaris	Monopisthocotylea	https://www.ncbi.nlm.nih.gov/assembly/GCA_000715275.1	web	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/715/275/GCA_000715275.1_Gsalaris_v1/GCA_000715275.1_Gsalaris_v1_genomic.fna.gz
 Diclidophora denticulata	Polyopisthocotylea	-	local	
-Eudiplozoon nipponicum	Polyopisthocotylea	-	local	
+Leptocotyle minor	Monopisthocotylea	-	local
+Eudiplozoon nipponicum	Polyopisthocotylea	-	local
+Dictyocotyle coeliaca
+Kapentagyrus tanganicanus	Monopisthocotylea	-	local
