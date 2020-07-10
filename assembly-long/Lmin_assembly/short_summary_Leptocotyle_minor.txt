@@ -1,0 +1,15 @@
+# BUSCO version is: 3.1.0 
+# The lineage dataset is: metazoa_odb9 (Creation date: 2016-02-13, number of species: 65, number of BUSCOs: 978)
+# To reproduce this run: python /usr/bin/run_BUSCO.py -i /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor_contigs/Lmin.contigs.fasta -o Leptocotyle_minor -l ../metazoa_odb9/ -m genome -c 32 -sp schistosoma --augustus_parameters '--progress=true'
+#
+# Summarized benchmarking in BUSCO notation for file /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor_contigs/Lmin.contigs.fasta
+# BUSCO was run in mode: genome
+
+	C:10.7%[S:10.6%,D:0.1%],F:8.9%,M:80.4%,n:978
+
+	105	Complete BUSCOs (C)
+	104	Complete and single-copy BUSCOs (S)
+	1	Complete and duplicated BUSCOs (D)
+	87	Fragmented BUSCOs (F)
+	786	Missing BUSCOs (M)
+	978	Total BUSCO groups searched

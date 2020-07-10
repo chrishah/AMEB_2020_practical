@@ -1,0 +1,15 @@
+# BUSCO version is: 3.1.0 
+# The lineage dataset is: metazoa_odb9 (Creation date: 2016-02-13, number of species: 65, number of BUSCOs: 978)
+# To reproduce this run: python /usr/bin/run_BUSCO.py -i Lmin-consent.contigs.fasta -o Lmin-consent -l metazoa_odb9/ -m genome -c 16 -sp schistosoma --augustus_parameters '--progress=true'
+#
+# Summarized benchmarking in BUSCO notation for file Lmin-consent.contigs.fasta
+# BUSCO was run in mode: genome
+
+	C:24.6%[S:22.7%,D:1.9%],F:19.3%,M:56.1%,n:978
+
+	241	Complete BUSCOs (C)
+	222	Complete and single-copy BUSCOs (S)
+	19	Complete and duplicated BUSCOs (D)
+	189	Fragmented BUSCOs (F)
+	548	Missing BUSCOs (M)
+	978	Total BUSCO groups searched
