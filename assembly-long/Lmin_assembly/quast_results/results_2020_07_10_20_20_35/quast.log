@@ -1,0 +1,62 @@
+/opt/conda/lib/python2.7/site-packages/quast-5.0.2-py2.7.egg-info/scripts/quast.py Lmin.contigs.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-3.10.0-1062.9.1.el7.x86_64-x86_64-with-debian-10.0 (linux_64)
+  Python version: 2.7.16
+  CPUs number: 64
+
+Started: 2020-07-10 20:20:35
+
+Logging to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/quast.log
+NOTICE: Maximum number of threads is set to 16 (use --threads option to set it manually)
+
+CWD: /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor
+Main parameters: 
+  MODE: default, threads: 16, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Contigs:
+  Pre-processing...
+  Lmin.contigs.fasta ==> Lmin.contigs
+
+2020-07-10 20:20:42
+Running Basic statistics processor...
+  Contig files: 
+    Lmin.contigs
+  Calculating N50 and L50...
+    Lmin.contigs, N50 = 8041, L50 = 2861, Total length = 73044146, GC % = 32.33, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/basic_stats/GC_content_plot.pdf
+  Drawing Lmin.contigs GC content plot...
+    saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/basic_stats/Lmin.contigs_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2020-07-10 20:20:49
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2020-07-10 20:20:51
+RESULTS:
+  Text versions of total report are saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/report.html
+  PDF version (tables and plots) is saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/report.pdf
+  Icarus (contig browser) is saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/icarus.html
+  Log is saved to /usr/people/EDVZ/hahnc/AMEB_2020_practical/BUSCO/Leptocotyle_minor/quast_results/results_2020_07_10_20_20_35/quast.log
+
+Finished: 2020-07-10 20:20:51
+Elapsed time: 0:00:15.810763
+NOTICEs: 2; WARNINGs: 1; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
