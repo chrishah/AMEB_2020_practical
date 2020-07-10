@@ -1,0 +1,17 @@
+#program,version,docker container ID,application type
+BUSCO,3.1.0,chrishah/busco-docker:v3.1.0,assessing genome completeness/gene identification
+blastp,2.6.0,chrishah/ncbi-blast:v2.6.0,sequence similarity search
+clustalo,1.2.4,chrishah/clustalo-docker:1.2.4,multiple sequence alignment
+Alicut & Aliscore,2.31,chrishah/alicut-aliscore-docker:2.31,scoring and trimming of multiple sequence alignments
+FASconCAT,1.0.4,chrishah/fasconcat-g:1.04,concatenation of individual gene aligments to supermatrix
+RAxML,8.2.12,chrishah/raxml-docker:8.2.12,ML inference
+SPADES,3.14.0,chrishah/spades:v3.14.0,Denovo genome assembly (Illumina/long reads/hybrid)
+platanus,1.2.4,chrishah/pyscaf-docker,Denovo genome assembly (Illumina)
+minia,3.2.4,local.Denovo genome assembly (Illumina)
+trimmomatic,0.38,chrishah/trimmomatic-docker:0.38,Illumina read quality trimming
+CANU,2.0,local,Denovo genome assembly (long reads)
+pyScaf,0.12a,chrishah/pyscaf-docker,scaffolding assembly with long reads
+flaSh,1.2.11,local,merging paired end Illumina data
+quast,5.0.2,reslp/quast:5.0.2,genome assembly metrics
+snakemake,5.9.1,local,workflow management
+singularity,3.5.3,local,virtualization/containerization
