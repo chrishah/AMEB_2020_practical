@@ -1,0 +1,22 @@
+Assembly	Lmin.contigs	Lmin_consent.contigs
+# contigs (>= 0 bp)	11772	21929
+# contigs (>= 1000 bp)	11772	21929
+# contigs (>= 5000 bp)	5738	17584
+# contigs (>= 10000 bp)	1766	11257
+# contigs (>= 25000 bp)	112	2691
+# contigs (>= 50000 bp)	8	380
+Total length (>= 0 bp)	73044146	296150384
+Total length (>= 1000 bp)	73044146	296150384
+Total length (>= 5000 bp)	54741864	282869754
+Total length (>= 10000 bp)	26759342	235987962
+Total length (>= 25000 bp)	3870520	101907683
+Total length (>= 50000 bp)	486116	24826389
+# contigs	11772	21929
+Largest contig	77518	142521
+Total length	73044146	296150384
+GC (%)	32.33	32.57
+N50	8041	18731
+N75	4997	11260
+L50	2861	4836
+L75	5747	9951
+# N's per 100 kbp	0.00	0.00
