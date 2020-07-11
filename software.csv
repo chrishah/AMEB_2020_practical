@@ -7,7 +7,7 @@ FASconCAT,1.0.4,chrishah/fasconcat-g:1.04,concatenation of individual gene aligm
 RAxML,8.2.12,chrishah/raxml-docker:8.2.12,ML inference
 SPADES,3.14.0,chrishah/spades:v3.14.0,Denovo genome assembly (Illumina/long reads/hybrid)
 platanus,1.2.4,chrishah/pyscaf-docker,Denovo genome assembly (Illumina)
-minia,3.2.4,local.Denovo genome assembly (Illumina)
+minia,3.2.4,local,Denovo genome assembly (Illumina)
 trimmomatic,0.38,chrishah/trimmomatic-docker:0.38,Illumina read quality trimming
 CANU,2.0,local,Denovo genome assembly (long reads)
 pyScaf,0.12a,chrishah/pyscaf-docker,scaffolding assembly with long reads
